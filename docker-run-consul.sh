@@ -2,6 +2,7 @@
 
 docker run -d \
 	-p 8500:8500 \
-	--name consul01 \
-	-h consul01 \
-	progrium/consul -server -bootstrap
+	-p 53:53/udp \
+	--name consul \
+	-h master \
+	progrium/consul -server -bootstrap -advertise 192.168.33.10
