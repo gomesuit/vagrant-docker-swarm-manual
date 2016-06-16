@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-docker -H 192.168.33.10:2377 network create --driver overlay --subnet=10.0.9.0/24 my_network
+#docker -H 192.168.33.10:2377 network create --driver overlay --subnet=10.0.9.0/24 my_network
 
 
 #docker -H 127.0.0.1:2377 run --name=busybox01 --net=my_network -d -ti busybox /bin/sh
