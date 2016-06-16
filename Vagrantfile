@@ -20,6 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.provision :shell, path: "install-docker.sh", args: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "docker-run-consul.sh"
     host.vm.provision :shell, path: "docker-run-swarm-manager.sh"
+    host.vm.provision :shell, path: "create-overlay-network.sh"
   end
 
   config.vm.define :node01 do |host|
