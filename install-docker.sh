@@ -8,7 +8,7 @@ yum install -y docker
 
 cat <<EOF > /etc/sysconfig/docker-network
 # /etc/sysconfig/docker-network
-DOCKER_NETWORK_OPTIONS="-H tcp://0.0.0.0:2375 --cluster-store=consul://192.168.33.10:8500 --cluster-advertise=$HOST_ADDRESS:2376"
+DOCKER_NETWORK_OPTIONS="-H tcp://0.0.0.0:2375 --cluster-store=consul://$HOST_ADDRESS:8500 --cluster-advertise=$HOST_ADDRESS:2376 --dns $HOST_ADDRESS --dns 8.8.8.8 --dns-search node.consul"
 EOF
 
 systemctl start docker
