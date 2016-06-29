@@ -19,7 +19,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.network "private_network", ip: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "install-common-package.sh"
     host.vm.provision :shell, path: "stop-firewall.sh"
-    #host.vm.provision :shell, path: "set-hosts.sh"
     host.vm.provision :shell, path: "install-docker.sh", args: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "docker-run-consul.sh", args: _CONSUL_ARGS
     host.vm.provision :shell, path: "set-dns.sh"
@@ -35,7 +34,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.network "private_network", ip: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "install-common-package.sh"
     host.vm.provision :shell, path: "stop-firewall.sh"
-    host.vm.provision :shell, path: "set-hosts.sh"
     host.vm.provision :shell, path: "install-docker.sh", args: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "docker-run-consul-node.sh", args: _CONSUL_ARGS
     host.vm.provision :shell, path: "set-dns.sh"
@@ -51,7 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.network "private_network", ip: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "install-common-package.sh"
     host.vm.provision :shell, path: "stop-firewall.sh"
-    host.vm.provision :shell, path: "set-hosts.sh"
     host.vm.provision :shell, path: "install-docker.sh", args: _PRIVATE_IP_ADDRESS
     host.vm.provision :shell, path: "docker-run-consul-node.sh", args: _CONSUL_ARGS
     host.vm.provision :shell, path: "set-dns.sh"
