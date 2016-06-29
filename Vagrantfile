@@ -24,7 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     host.vm.provision :shell, path: "docker-run-consul.sh", args: _CONSUL_ARGS
     host.vm.provision :shell, path: "set-dns.sh"
     host.vm.provision :shell, path: "docker-run-swarm-manager.sh"
-    host.vm.provision :shell, path: "create-overlay-network.sh"
   end
 
   config.vm.define :node01 do |host|
